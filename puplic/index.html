@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buzz the poet | Poetry in All Forms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">BUZZ THE POET</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#written">Written</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#upload" class="btn-upload">Upload</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Where Words Find Their Voice</h1>
+            <p>Discover poetry in written, spoken, and visual forms</p>
+            <a href="#featured" class="btn">Explore Poems</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <!-- Featured Poems -->
+    <section id="featured" class="section featured">
+        <div class="container">
+            <h2 class="section-title">Featured Poems</h2>
+            <div class="poem-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Written Poetry Section -->
+    <section id="written" class="section written">
+        <div class="container">
+            <h2 class="section-title">Written Poetry</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="love">Love</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="life">Life</button>
+            </div>
+            <div class="poem-grid">
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Poetry Section -->
+    <section id="audio" class="section audio">
+        <div class="container">
+            <h2 class="section-title">Audio Poetry</h2>
+            <div class="audio-player-container">
+                <div class="audio-player">
+                    <div class="audio-info">
+                        <div class="audio-cover"></div>
+                        <div class="audio-details">
+                            <h3 class="audio-title">Select a poem to play</h3>
+                            <p class="audio-author"></p>
+                        </div>
+                    </div>
+                    <audio id="main-audio"></audio>
+                    <div class="audio-controls">
+                        <button class="control-btn" id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                        <button class="control-btn" id="play-btn"><i class="fas fa-play"></i></button>
+                        <button class="control-btn" id="next-btn"><i class="fas fa-step-forward"></i></button>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <span class="time current-time">0:00</span>
+                        <span class="time duration">0:00</span>
+                        <button class="control-btn volume-control">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.7">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-poem-list">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="section video">
+        <div class="container">
+            <h2 class="section-title">Video Poetry</h2>
+            <div class="video-grid">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="section upload">
+        <div class="container">
+            <h2 class="section-title">Share Your Poetry</h2>
+            <form id="upload-form" class="upload-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="poem-title">Title*</label>
+                    <input type="text" id="poem-title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="poem-author">Your Name*</label>
+                    <input type="text" id="poem-author" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="poem-type">Poetry Type*</label>
+                    <select id="poem-type" name="submissionType" required>
+                        <option value="">Select type</option>
+                        <option value="text">Written</option>
+                        <option value="audio">Audio</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+                <div class="form-group" id="text-content-group">
+                    <label for="poem-content">Poetry Content* (for written)</label>
+                    <textarea id="poem-content" name="content" rows="6"></textarea>
+                </div>
+                <div class="form-group file-upload" id="media-upload-group" style="display:none;">
+                    <label id="media-label">Upload File*</label>
+                    <input type="file" id="media-file" name="media" accept="">
+                    <div class="file-preview"></div>
+                </div>
+                <div class="form-group">
+                    <label for="poem-theme">Theme</label>
+                    <select id="poem-theme" name="theme">
+                        <option value="">None</option>
+                        <option value="love">Love</option>
+                        <option value="nature">Nature</option>
+                        <option value="life">Life</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p class="form-note">All submissions will be reviewed before publishing</p>
+                </div>
+                <button type="submit" class="btn">Submit Poem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>BUZZ </h3>
+                    <p>A sanctuary for poetry in all its forms. Celebrating the written, spoken, and visual expression of human emotion.
+                        BOAZ is my name BUZZ is my claim to fame Peace
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#written">Written Poetry</a></li>
+                        <li><a href="#audio">Audio Poetry</a></li>
+                        <li><a href="#video">Video Poetry</a></li>
+                        <li><a href="#upload">Upload</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/buzzthepoet?igsh=bXJoMGk4bXkzcG0z"><i class="fab fa-instagram"></i></a>
+                        <a href="https://vm.tiktok.com/ZMBurRkRo/"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 BUZZthePoet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="modal" id="poem-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title"></h2>
+            <p class="modal-author"></p>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<div id="admin-login" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Admin Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Dashboard  -->
+<div id="admin-dashboard" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Poetry Submissions</h2>
+        <div class="submissions-list">
+            
+        </div>
+ </div>
+</div>
+</body>
+</html>
